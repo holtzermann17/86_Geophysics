@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MercatorProjection}
+\pmcreated{2013-03-22 15:19:53}
+\pmmodified{2013-03-22 15:19:53}
+\pmowner{acastaldo}{8031}
+\pmmodifier{acastaldo}{8031}
+\pmtitle{Mercator projection}
+\pmrecord{5}{37145}
+\pmprivacy{1}
+\pmauthor{acastaldo}{8031}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{86A30}
+\pmrelated{RiemannSphere}
+\pmrelated{ConformalityOfStereographicProjection}
+\pmrelated{InverseGudermannianFunction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+In a Mercator Projection the point on the sphere (of radius R) with longitude $L$ (positive East) and latitude $\lambda$ (positive North) is mapped to the point in the plane with coordinates $x,y$:
+
+$$
+x = R L
+$$
+$$
+y = R \ln(\tan( \frac{\pi}{4} + \frac{\lambda}{2}))
+$$
+
+The Mercator projection satisfies two important properties: it is conformal, that is it preserves angles, and it maps the sphere's parallels into straight line segments of length $2\pi R$.  (A parallel of latitude means a small circle comprised of points at a specified latitude).
+
+Starting from these two properties we can derive the Mercator Projection.  First note that a parallel of latitude $\lambda$\ has length $2\pi R \cos( \lambda)$.    To make the projections of the parallels all the same length a stretching factor in longitude of $\frac{1}{\cos( \lambda)}$ will have to be applied.  For the mapping to be conformal, the same stretching factor must be applied in latitude also.  Note that the stretching factor varies with $\lambda$ so to map a specified latitude $\lambda_0$ to an ordinate $y$ we must evaluate an integral.
+$$
+y = \int_{0}^{\lambda_0} (1/\cos( \lambda)) d\lambda
+$$
+Early mapmakers such as Mercator evaluated this integral numerically to produce what is called a Table of Meridional Parts that can be used to map $\lambda_0$ into y.  Later it was noticed that the integral of one over cosine actually has a closed form, leading to the expression for $y$ shown above.
+%%%%%
+%%%%%
+\end{document}
